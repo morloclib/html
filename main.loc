@@ -1,0 +1,19 @@
+module html (*)
+
+packHtml   :: pack   => Str -> Html
+unpackHtml :: unpack => Html -> Str
+
+source Py from "toHtml.py" ("toHtml")
+
+-- should eventually be just memory (err, ehum, a typeclass)
+toHtml :: a -> Html
+
+
+-- class HtmlShow a where
+--     toHtml :: a -> Html
+--
+-- instance HtmlShow Str where
+--     toHtml = id
+--
+-- instance HtmlShow [a] where
+--     toHtml = enclose "<li>" "," "</li>" map toHtml
