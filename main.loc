@@ -5,6 +5,8 @@ unpackHtml :: unpack => Html -> Str
 
 source Py from "toHtml.py" ("toHtml")
 
+type Py Html = "str"
+
 -- should eventually be just memory (err, ehum, a typeclass)
 toHtml :: a -> Html
 
