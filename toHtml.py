@@ -7,10 +7,10 @@ def toHtml(x) -> str:
     elif(isinstance(x, str)):
         return html.escape(x)
     elif(isinstance(x, list)):
-        return "<ul>" + "".join(["<li>" + toHtml(item) + "</li>" for item in x]) + "</ul>"
+        return "<ol>" + "".join(["<li>" + toHtml(item) + "</li>" for item in x]) + "</ol>"
     elif(isinstance(x, set)):
-        return "<ul>" + "".join(["<li>" + toHtml(item) + "</li>" for item in x]) + "</ul>"
+        return "<ol>" + "".join(["<li>" + toHtml(item) + "</li>" for item in x]) + "</ol>"
     elif(isinstance(x, dict)):
-        return "<ul>" + "".join(["<li>" + toHtml(key) + " : " + toHtml(val) + "</li>" for (key,val) in x.items()]) + "</ul>"
+        return "<ol>" + "".join(["<li>" + toHtml(key) + " : " + toHtml(val) + "</li>" for (key,val) in x.items()]) + "</ol>"
     else:
         return html.escape(str(x))
