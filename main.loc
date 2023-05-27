@@ -3,13 +3,15 @@ module html (*)
 packHtml   :: pack   => Str -> Html
 unpackHtml :: unpack => Html -> Str
 
-source Py from "toHtml.py" ("toHtml")
+source Py from "html.py" ("toHtml", "writeHtml")
 
 type Py Html = "str"
 
 -- should eventually be just memory (err, ehum, a typeclass)
 toHtml :: a -> Html
 
+writeHtml :: Html -> Str -> ()
+writeHtml Py :: "str" -> "str" -> ()
 
 -- class HtmlShow a where
 --     toHtml :: a -> Html

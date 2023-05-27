@@ -14,3 +14,7 @@ def toHtml(x) -> str:
         return "<ol>" + "".join(["<li>" + toHtml(key) + " : " + toHtml(val) + "</li>" for (key,val) in x.items()]) + "</ol>"
     else:
         return html.escape(str(x))
+
+def writeHtml(html, filename):
+    with open(filename, "w") as f:
+        f.write(html)
