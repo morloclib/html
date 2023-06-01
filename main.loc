@@ -1,23 +1,20 @@
 module html (*)
 
-packHtml   :: pack   => Str -> Html
-unpackHtml :: unpack => Html -> Str
+import conventions (Unit, Str)
 
-source Py from "html.py" ("toHtml", "writeHtml")
+type Html = Str
 
-type Py Html = "str"
+source Py from "html.py" ("toHtml", "writeHtml", "tag")
 
--- should eventually be just memory (err, ehum, a typeclass)
 toHtml :: a -> Html
+writeHtml :: filename:Str -> Html -> ()
+tag :: tag:Str -> x:Html -> Html
 
-writeHtml :: Html -> Str -> ()
-writeHtml Py :: "str" -> "str" -> ()
-
--- class HtmlShow a where
---     toHtml :: a -> Html
---
--- instance HtmlShow Str where
---     toHtml = id
---
--- instance HtmlShow [a] where
---     toHtml = enclose "<li>" "," "</li>" map toHtml
+-- -- class HtmlShow a where
+-- --     toHtml :: a -> Html
+-- --
+-- -- instance HtmlShow Str where
+-- --     toHtml = id
+-- --
+-- -- instance HtmlShow [a] where
+-- --     toHtml = enclose "<li>" "," "</li>" map toHtml
