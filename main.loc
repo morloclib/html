@@ -1,6 +1,6 @@
 module html (*)
 
-import conventions (Unit, Str)
+import types (Unit, Str)
 
 type Html = Str
 
