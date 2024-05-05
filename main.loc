@@ -6,7 +6,7 @@ type Html = Str
 
 source Py from "html.py" ("toHtml", "writeHtml", "tag")
 
-toHtml :: a -> Html
+toHtml a :: a -> Html
 writeHtml :: filename:Str -> Html -> ()
 tag :: tag:Str -> x:Html -> Html
 
